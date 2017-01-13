@@ -4,7 +4,7 @@ const jsonfile = require('jsonfile');
 
 let tsConfig = `./node_modules/typescript/lib/tsc --init`;
 tsConfig = tsConfig.split(' ');
-let createFiles = `package.json index.ts .env .gitignore README.md`;
+let createFiles = `package.json index.ts hose.ts .env .gitignore README.md`;
 createFiles = createFiles.split(' ');
 
 console.log('Creating files...');
@@ -74,12 +74,39 @@ npm install NAME_GOES_HERE
 EXAMPLE_USAGE_GOES_HERE
 
 \`\`\`
-`
+`;
+
+const indexTs = `import Hose from './hose';
+
+let x = new Hose();
+
+x.on('LOL', () => {
+  console.log('The TypeScript environment is ready.');
+});
+
+x.lol();`;
+
+const hoseTs = `import { EventEmitter } from 'events';
+
+class Hose extends EventEmitter {
+  constructor () {
+    super();
+  }
+
+  lol () {
+    this.emit('LOL');
+  }
+}
+
+export default Hose;
+`;
 
 console.log('Writing to Files...');
 jsonfile.writeFileSync('package.json', pkgJSON);
 writeFileSync('.env', env);
 writeFileSync('.gitignore', gitignore);
+writeFileSync('index.ts', indexTs);
+writeFileSync('hose.ts', hoseTs);
 writeFileSync('README.md', README);
 
 
@@ -93,3 +120,5 @@ let config = spawnSync( 'node', tsConfig );
 
 let finish = spawnSync('clear');
 console.log('Creation Complete');
+
+console.log('\n\n\n Run \'npm start\' to begin.');

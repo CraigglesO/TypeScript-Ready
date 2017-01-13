@@ -1,6 +1,7 @@
 {
   "name": "typescript-ready",
-  "version": "1.0.3",
+  "version": "1.0.7",
+  "license": "BSD",
   "description": "Create A TypeScript environement. Nodemon ready.",
   "main": "TypeScript-Ready.js",
   "scripts": {
@@ -8,10 +9,10 @@
     "start": "babel-node index.js"
   },
   "bin": {
-    "babel-ready": "bin/TypeScript-Ready.js"
+    "typescript-ready": "bin/TypeScript-Ready.js"
   },
   "preferGlobal": "true",
-  "author": "",
+  "author": "Craig OConnor",
   "repository": {
     "type": "git",
     "url": "https://github.com/CraigglesO/TypeScript-Ready.git"
