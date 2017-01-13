@@ -1,6 +1,6 @@
 {
   "name": "typescript-ready",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Create A TypeScript environement. Nodemon ready.",
   "main": "TypeScript-Ready.js",
   "scripts": {
@@ -8,8 +8,9 @@
     "start": "babel-node index.js"
   },
   "bin": {
-    "babel-ready": "./bin/TypeScript-Ready.js"
+    "babel-ready": "bin/TypeScript-Ready.js"
   },
+  "preferGlobal": "true",
   "author": "",
   "repository": {
     "type": "git",

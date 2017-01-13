@@ -1,6 +1,6 @@
 const spawnSync = require('child_process').spawnSync;
 const writeFileSync = require('fs').writeFileSync;
-const jsonfile = require('jsonfile')
+const jsonfile = require('jsonfile');
 
 let tsConfig = `./node_modules/typescript/lib/tsc --init`;
 tsConfig = tsConfig.split(' ');
