@@ -26,6 +26,10 @@ const pkgJSON = {
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
   },
   "author": "",
+  "repository" : {
+    "type" : "git",
+    "url" : ""
+  }
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^7.0.0",
