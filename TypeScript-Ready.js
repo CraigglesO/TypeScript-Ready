@@ -29,7 +29,7 @@ const pkgJSON = {
   "repository" : {
     "type" : "git",
     "url" : ""
-  }
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^7.0.0",
