@@ -1,6 +1,5 @@
 const spawnSync = require('child_process').spawnSync;
 const writeFileSync = require('fs').writeFileSync;
-const jsonfile = require('jsonfile');
 
 let tsConfig = `./node_modules/typescript/lib/tsc --init`;
 tsConfig = tsConfig.split(' ');
@@ -15,7 +14,7 @@ if (createFile.stderr) {
 
 
 //File contents:
-const pkgJSON = {
+const pkgJSON = `{
   "name": "Typescript-Ready",
   "version": "0.0.0",
   "description": "description goes here",
@@ -37,7 +36,7 @@ const pkgJSON = {
     "ts-node": "^2.0.0",
     "typescript": "^2.1.5"
   }
-};
+}`
 
 const env = "";
 
@@ -121,7 +120,7 @@ Permission to use, copy, modify, and/or distribute this software for any purpose
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.`
 
 console.log('Writing to Files...');
-jsonfile.writeFileSync('package.json', pkgJSON);
+writeFileSync('package.json', pkgJSON);
 writeFileSync('.env', env);
 writeFileSync('.gitignore', gitignore);
 writeFileSync('index.ts', indexTs);
