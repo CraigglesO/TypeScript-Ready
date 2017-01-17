@@ -3,7 +3,7 @@ const writeFileSync = require('fs').writeFileSync;
 
 let tsConfig = `./node_modules/typescript/lib/tsc --init`;
 tsConfig = tsConfig.split(' ');
-let createFiles = `package.json index.ts hose.ts .env .gitignore README.md LICENSE`;
+let createFiles = `package.json index.ts hose.ts tsconfig.json .env .gitignore README.md LICENSE`;
 createFiles = createFiles.split(' ');
 
 console.log('Creating files...');
@@ -20,7 +20,7 @@ const pkgJSON = `{
   "description": "description goes here",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \'Error: no test specified\' && exit 1",
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
   },
@@ -119,6 +119,16 @@ Permission to use, copy, modify, and/or distribute this software for any purpose
 
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.`
 
+const tsconfig = `{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false
+    }
+}
+`
+
 console.log('Writing to Files...');
 writeFileSync('package.json', pkgJSON);
 writeFileSync('.env', env);
@@ -127,6 +137,7 @@ writeFileSync('index.ts', indexTs);
 writeFileSync('hose.ts', hoseTs);
 writeFileSync('README.md', README);
 writeFileSync('LICENSE', ISC);
+writeFileSync('tsconfig.json', tsconfig);
 
 
 
