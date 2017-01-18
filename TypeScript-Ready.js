@@ -67,12 +67,12 @@ INFORMATION_GOES_HERE
 
 ## Install
 
-\`\`\`
+\`\`\` typescript
 npm install NAME_GOES_HERE
 \`\`\`
 
 ## Usage
-\`\`\`
+\`\`\` typescript
 EXAMPLE_USAGE_GOES_HERE
 
 \`\`\`
@@ -81,6 +81,9 @@ EXAMPLE_USAGE_GOES_HERE
 
 ISC License (ISC)
 Copyright <YEAR> <OWNER>
+Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC") 
+Copyright (c) 1995-2003 by Internet Software Consortium
+
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
