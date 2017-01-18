@@ -1,4 +1,4 @@
-# Babel-Ready
+# TypeScript-Ready
 
 ### Quickly get a TypeScript environment up and running (BOILER-PLATE)
 
