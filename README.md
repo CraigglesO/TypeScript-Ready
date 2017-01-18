@@ -7,12 +7,12 @@ Simple project to make many TS projects.
 ## Install
 Installing globally will make this a more useful template engine.
 
-```
+``` typescript
 npm install -g typescript-ready
 ```
 
 ## Usage
-```
+``` typescript
 
 typescript-ready
 
