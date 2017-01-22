@@ -1,7 +1,7 @@
 # TypeScript-Ready [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-  [travis-image]: https://travis-ci.org/CraigglesO/typescript-ready.svg?branch=master
-  [travis-url]: https://travis-ci.org/CraigglesO/typescript-ready
+  [travis-image]: https://travis-ci.org/CraigglesO/TypeScript-Ready.svg?branch=master
+  [travis-url]: https://travis-ci.org/CraigglesO/TypeScript-Ready
   [npm-image]: https://img.shields.io/npm/v/typescript-ready.svg
   [npm-url]: https://npmjs.org/package/typescript-ready
   [downloads-image]: https://img.shields.io/npm/dm/typescript-ready.svg
