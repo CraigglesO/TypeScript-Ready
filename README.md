@@ -1,11 +1,11 @@
 # TypeScript-Ready [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-  [travis-image]: https://travis-ci.org/CraigglesO/noop.svg?branch=master
-  [travis-url]: https://travis-ci.org/CraigglesO/noop
-  [npm-image]: https://img.shields.io/npm/v/noop.svg
-  [npm-url]: https://npmjs.org/package/noop
-  [downloads-image]: https://img.shields.io/npm/dm/noop.svg
-  [downloads-url]: https://npmjs.org/package/noop
+  [travis-image]: https://travis-ci.org/CraigglesO/TypeScript-Ready.svg?branch=master
+  [travis-url]: https://travis-ci.org/CraigglesO/TypeScript-Ready
+  [npm-image]: https://img.shields.io/npm/v/TypeScript-Ready.svg
+  [npm-url]: https://npmjs.org/package/TypeScript-Ready
+  [downloads-image]: https://img.shields.io/npm/dm/TypeScript-Ready.svg
+  [downloads-url]: https://npmjs.org/package/TypeScript-Ready
 
 ### Quickly get a TypeScript environment up and running (BOILER-PLATE)
 
