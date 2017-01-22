@@ -16,5 +16,3 @@ test('this is to give a build success lol.', (t) => {
 
   t.end();
 });
-
-const typescriptReady = require("../TypeScript-Ready");
