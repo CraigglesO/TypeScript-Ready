@@ -37,7 +37,7 @@ ask('Please input your github project handle: \n Example: https://github.com/Cra
 
   let tsConfig = `./node_modules/typescript/lib/tsc --init`;
   tsConfig = tsConfig.split(' ');
-  let createFiles = `package.json tsconfig.json .env .gitignore README.md LICENSE CONTRIBUTE.md travis.yml typings.json`;
+  let createFiles = `package.json tsconfig.json .env .gitignore README.md LICENSE CONTRIBUTE.md .travis.yml typings.json`;
   createFiles = createFiles.split(' ');
 
   console.log('Creating files...');
@@ -53,105 +53,105 @@ ask('Please input your github project handle: \n Example: https://github.com/Cra
 
   //File contents:
   const pkgJSON = `{
-    "name": "${PROJECT_NAME}",
-    "version": "0.0.0",
-    "description": "DESCRIPTION_GOES_HERE",
-    "main": "./out/${PROJECT_NAME}.js",
-    "scripts": {
-      "test": "echo running server tests... && cd test && ts-node ../node_modules/blue-tape/bin/blue-tape \\"**/*.ts\\" | tap-spec",
-      "start": "npm run build:live",
-      "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./${PROJECT_NAME}.ts",
-      "build": "echo building... && typings bundle -o out/${PROJECT_NAME}.d.ts",
-      "lint": "echo linting... && tslint \\"**/*.ts\\" -e \\"source/**\\" -e \\"source-test/**\\" -e \\"out/**\\" -e \\"node_modules/**\\" -e \\"typings/**\\"",
-      "browser-test": "echo running browser tests... && echo no browser test",
-      "source-test": "echo running source tests... &&  echo no source test",
-      "watch": "onchange -w \\"**/*.ts\\" -i -e \\"out/**\\" -- npm -s run build+test",
-      "types-publish": "npm -s run lint+build+test && echo please publish to typings/registry",
-      "all-tests": "npm test",
-      "build+test": "npm run build && npm run all-tests",
-      "lint+build+test": "npm run lint && npm run build+test",
-      "prepublish": "typings install"
-    },
-    "author": "${USERNAME}",
-    "repository" : {
-      "type" : "git",
-      "url" : "${HANDLE}"
-    },
-    "license": "ISC",
-    "devDependencies": {
-      "@types/node": "^7.0.0",
-      "blue-tape": "^1.0.0",
-      "tap-spec": "^4.1.1",
-      "nodemon": "^1.11.0",
-      "ts-node": "^2.0.0",
-      "typescript": "^2.1.5",
-      "tslint": "^4.3.1",
-      "tslint-config-typings": "^0.3.1",
-      "onchange": "^3.2.1",
-      "typings": "^2.1.0"
-    }
-  }`
+  "name": "${PROJECT_NAME}",
+  "version": "0.0.0",
+  "description": "DESCRIPTION_GOES_HERE",
+  "main": "./out/${PROJECT_NAME}.js",
+  "scripts": {
+    "test": "echo running server tests... && cd test && ts-node ../node_modules/blue-tape/bin/blue-tape \\"**/*.ts\\" | tap-spec",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./${PROJECT_NAME}.ts",
+    "build": "echo building... && typings bundle -o out/${PROJECT_NAME}.d.ts",
+    "lint": "echo linting... && tslint \\"**/*.ts\\" -e \\"source/**\\" -e \\"source-test/**\\" -e \\"out/**\\" -e \\"node_modules/**\\" -e \\"typings/**\\"",
+    "browser-test": "echo running browser tests... && echo no browser test",
+    "source-test": "echo running source tests... &&  echo no source test",
+    "watch": "onchange -w \\"**/*.ts\\" -i -e \\"out/**\\" -- npm -s run build+test",
+    "types-publish": "npm -s run lint+build+test && echo please publish to typings/registry",
+    "all-tests": "npm test",
+    "build+test": "npm run build && npm run all-tests",
+    "lint+build+test": "npm run lint && npm run build+test",
+    "prepublish": "typings install"
+  },
+  "author": "${USERNAME}",
+  "repository" : {
+    "type" : "git",
+    "url" : "${HANDLE}"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^7.0.0",
+    "blue-tape": "^1.0.0",
+    "tap-spec": "^4.1.1",
+    "nodemon": "^1.11.0",
+    "ts-node": "^2.0.0",
+    "typescript": "^2.1.5",
+    "tslint": "^4.3.1",
+    "tslint-config-typings": "^0.3.1",
+    "onchange": "^3.2.1",
+    "typings": "^2.1.0"
+  }
+}`;
 
   const env = "";
 
   const gitignore = `
-  lib-cov
-  *.seed
-  *.log
-  *.csv
-  *.dat
-  *.out
-  *.pid
-  *.gz
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
 
-  .env
-  pids
-  logs
-  results
+.env
+pids
+logs
+results
 
-  node_modules
-  npm-debug.log
+node_modules
+npm-debug.log
   `;
 
   const README = `# ${PROJECT_NAME} [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-  [travis-image]: https://travis-ci.org/${USERNAME}/${PROJECT_NAME}.svg?branch=master
-  [travis-url]: https://travis-ci.org/${USERNAME}/${PROJECT_NAME}
-  [npm-image]: https://img.shields.io/npm/v/${PROJECT_NAME}.svg
-  [npm-url]: https://npmjs.org/package/${PROJECT_NAME}
-  [downloads-image]: https://img.shields.io/npm/dm/${PROJECT_NAME}.svg
-  [downloads-url]: https://npmjs.org/package/${PROJECT_NAME}
+[travis-image]: https://travis-ci.org/${USERNAME}/${PROJECT_NAME}.svg?branch=master
+[travis-url]: https://travis-ci.org/${USERNAME}/${PROJECT_NAME}
+[npm-image]: https://img.shields.io/npm/v/${PROJECT_NAME}.svg
+[npm-url]: https://npmjs.org/package/${PROJECT_NAME}
+[downloads-image]: https://img.shields.io/npm/dm/${PROJECT_NAME}.svg
+[downloads-url]: https://npmjs.org/package/${PROJECT_NAME}
 
-  ### BASIC_INFO_OF_PROJECT_GOES_HERE
+### BASIC_INFO_OF_PROJECT_GOES_HERE
 
-  INFORMATION_GOES_HERE
+INFORMATION_GOES_HERE
 
-  ## Install
+## Install
 
-  \`\`\` typescript
-  npm install ${PROJECT_NAME}
-  \`\`\`
+\`\`\` typescript
+npm install ${PROJECT_NAME}
+\`\`\`
 
-  ## Usage
-  \`\`\` typescript
-  import * as x from "${PROJECT_NAME}"
+## Usage
+\`\`\` typescript
+import * as x from "${PROJECT_NAME}"
 
-  EXAMPLE_USAGE_GOES_HERE
+EXAMPLE_USAGE_GOES_HERE
 
-  \`\`\`
+\`\`\`
 
-  ## ISC License (Open Source Initiative)
+## ISC License (Open Source Initiative)
 
-  ISC License (ISC)
-  Copyright ${YEAR} <${USERNAME}>
-  Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
-  Copyright (c) 1995-2003 by Internet Software Consortium
+ISC License (ISC)
+Copyright ${YEAR} <${USERNAME}>
+Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
+Copyright (c) 1995-2003 by Internet Software Consortium
 
 
-  Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
-  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-  `;
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+`;
 
   const indexTs = `
 
@@ -252,44 +252,43 @@ By making a contribution to this project, I certify that:
   `;
 
   const tst = `import * as test from "blue-tape";
-  import { ready } from "../${PROJECT_NAME}";
+import { ready } from "../${PROJECT_NAME}";
 
-  test('Test Typescript-Ready', (t) => {
-    t.plan(1);
+test('Test Typescript-Ready', (t) => {
+  t.plan(1);
 
-    t.true( ready() );
+  t.true( ready() );
 
-    t.end();
-  });
-
+  t.end();
+});
   `;
 
   const travis = `language: node_js
 
-  notifications:
-    email:
-      on_success: never
-      on_failure: change
+notifications:
+  email:
+    on_success: never
+    on_failure: change
 
-  node_js:
-    - "stable"
+node_js:
+  - "stable"
 
-  script:
-    - npm run lint+build+test
+script:
+  - npm run lint+build+test
   `;
 
   const typings = `{
-    "name": "${PROJECT_NAME}",
-    "main": "${PROJECT_NAME}.d.ts",
-    "homepage": "",
-    "version": "0.8.2",
-    "globalDevDependencies": {
-      "node": "registry:env/node#6.0.0+20170119204930"
-    },
-    "devDependencies": {
-      "blue-tape": "registry:npm/blue-tape#0.2.0+20160723033700"
-    }
+  "name": "${PROJECT_NAME}",
+  "main": "${PROJECT_NAME}.d.ts",
+  "homepage": "",
+  "version": "0.8.2",
+  "globalDevDependencies": {
+    "node": "registry:env/node#6.0.0+20170119204930"
+  },
+  "devDependencies": {
+    "blue-tape": "registry:npm/blue-tape#0.2.0+20160723033700"
   }
+}
   `;
 
   const indexD = `import I = require("./${PROJECT_NAME}");
@@ -307,7 +306,7 @@ By making a contribution to this project, I certify that:
   writeFileSync('LICENSE', ISC);
     writeFileSync('CONTRIBUTE.md', contr);
   writeFileSync('tsconfig.json', tsconfig);
-  writeFileSync('travis.yml', travis);
+  writeFileSync('.travis.yml', travis);
   writeFileSync('typings.json', typings);
   // Test file:
   writeFileSync('./test/test.ts', tst);
