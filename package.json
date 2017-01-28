@@ -1,6 +1,6 @@
 {
   "name": "typescript-ready",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "license": "BSD",
   "description": "Create A TypeScript environement. Nodemon ready.",
   "main": "TypeScript-Ready.js",

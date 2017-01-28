@@ -9,7 +9,7 @@
 
 ### Quickly get a TypeScript environment up and running (BOILER-PLATE)
 
-Simple project to get you up and going with typescript with one command.
+Dependency free method to get you up and going with typescript with one command.
 
 ## Install
 Installing globally will make this a more useful template engine.
