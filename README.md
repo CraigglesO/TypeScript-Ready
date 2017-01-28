@@ -9,7 +9,7 @@
 
 ### Quickly get a TypeScript environment up and running (BOILER-PLATE)
 
-Simple project to make many TS projects.
+Simple project to get you up and going with typescript with one command.
 
 ## Install
 Installing globally will make this a more useful template engine.
@@ -17,6 +17,24 @@ Installing globally will make this a more useful template engine.
 ``` typescript
 npm install -g typescript-ready
 ```
+
+## Features
+* Linting (typescript linting)
+* blue-tape testing (blue-tape supports promises!)
+* Keeps your files well organized in an out folder
+* Github, NPM and @types ready
+* The name of the project is pre-setup as the primary .ts and .d.ts file
+* Travis Ready! Quick deployment and PR testings!
+* Contribute file ready to go
+* tsconfig with commonjs setup
+* editorconfig for stylized publishing
+* LICENSE file ready to go, dated and named to your github USERNAME
+* typescript is node ready (tap-spec)
+* nodemon AND onchange ready ('npm run start' or 'npm run watch' respectively)
+
+
+
+If you can think of any features I am missing, LET ME KNOW!!!!
 
 ## Usage
 ``` typescript
@@ -28,6 +46,53 @@ typescript-ready
 //Then test it out:
 npm start
 
+```
+
+## Available Scripts
+
+* `"test"`: Run test-cases
+* `"start"`: Run a nodemon service for quick refreshing
+* `"build:live"`: Build then run the built file
+* `"build"`: Build for service
+* `"lint"`: Quick linting service
+* `"browser-test"`: Test your javascript in a browser
+* `"source-test"`: test the file you're currently working on
+* `"watch"`: this is an alternative to nodemon and has no lag
+* `"types-publish"`: publish to @types
+* `"all-tests"`: run all tests
+* `"build+test"`: build and test without linting
+* `"lint+build+test"`: lint, build and test for deployment
+* `"prepublish"`: a typings publish
+
+## Tree Structure
+
+``` typescript
+.
+├── CONTRIBUTE.md
+├── LICENSE
+├── README.md
+├── .env
+├── .editorconfig
+├── .gitignore
+├── .git
+├── index.d.ts
+├── index.ts
+├── package.json
+├── test
+│   └── test.ts
+├── tsconfig.json
+├── .travis.yml
+├── typings
+│   ├── globals
+│   │   └── node
+│   │       ├── index.d.ts
+│   │       └── typings.json
+│   ├── index.d.ts
+│   └── modules
+│       └── blue-tape
+│           ├── index.d.ts
+│           └── typings.json
+└── typings.json
 ```
 
 ## ISC License (Open Source Initiative)

@@ -37,7 +37,7 @@ ask('Please input your github project handle: \n Example: https://github.com/Cra
 
   let tsConfig = `./node_modules/typescript/lib/tsc --init`;
   tsConfig = tsConfig.split(' ');
-  let createFiles = `package.json tsconfig.json .env .gitignore README.md LICENSE CONTRIBUTE.md .travis.yml typings.json`;
+  let createFiles = `package.json tsconfig.json .env .gitignore README.md LICENSE CONTRIBUTE.md .travis.yml typings.json .editorconfig`;
   createFiles = createFiles.split(' ');
 
   console.log('Creating files...');
@@ -296,6 +296,26 @@ script:
   export = I;
   `;
 
+  const econfig = `root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+
+[*.json]
+indent_size = 2
+indent_style = space
+
+[*.{js,jsx,ts,tsx}]
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false`;
+
   console.log('Writing to Files...');
   writeFileSync('package.json', pkgJSON);
   writeFileSync('.env', env);
@@ -310,6 +330,7 @@ script:
   writeFileSync('typings.json', typings);
   // Test file:
   writeFileSync('./test/test.ts', tst);
+  writeFileSync('.editorconfig', econfig);
 
 
 
@@ -334,6 +355,29 @@ script:
   console.log('Creation Complete');
 
   console.log(`
+
+
+                                _
+                             _ooOoo_
+      TypeScript-Ready      o8888888o
+                            88" . "88
+                            (| -_- |)
+                            O\  =  /O
+                         ____/`---'\____
+                       .'  \\|     |//  `.
+                      /  \\|||  :  |||//  \
+                     /  _||||| -:- |||||_  \
+                     |   | \\\  -  /'| |   |      Thanks for using!
+                     | \_|  `\`---'//  |_/ |
+                     \  .-\__ `-. -'__/-.  /
+                   ___`. .'  /--.--\  `. .'___
+                ."" '<  `.___\_<|>_/___.' _> \"".
+               | | :  `- \`. ;`. _/; .'/ /  .' ; |
+               \  \ `-.   \_\_`. _.'_/_/  -' _.' /
+================`-.`___`-.__\ \___  /__.-'_.'_.-'================
+                             `=--=-'
+
+
 
   Run \'npm start\' to begin.
 
