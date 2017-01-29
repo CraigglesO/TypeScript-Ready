@@ -19,7 +19,9 @@ function ask(question, callback) {
   });
 }
 
-ask('Please input your github project handle: \n Example: https://github.com/CraigglesO/typescript-ready.git', function(answer) {
+const askings = 'Please input your github project handle: \n Example: https://github.com/CraigglesO/typescript-ready.git';
+
+ask(askings, function(answer) {
   console.log(answer);
   if (!answer) {
     console.log('sorry, you need to insert a github handle');
