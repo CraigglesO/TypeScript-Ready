@@ -19,18 +19,19 @@ npm install -g typescript-ready
 ```
 
 ## Features
-* Linting (typescript linting)
-* blue-tape testing (blue-tape supports promises!)
-* Keeps your files well organized in an out folder
+* **Linting** (typescript linting)
+* **blue-tape** testing (blue-tape supports promises!)
+* Keeps your files well **organized** in an out folder
 * Github, NPM and @types ready
 * The name of the project is pre-setup as the primary .ts and .d.ts file
-* Travis Ready! Quick deployment and PR testings!
+* **Travis** Ready! Quick deployment and PR testings!
 * Contribute file ready to go
 * tsconfig with commonjs setup
 * editorconfig for stylized publishing
 * LICENSE file ready to go, dated and named to your github USERNAME
 * typescript is node ready (tap-spec)
 * nodemon AND onchange ready ('npm run start' or 'npm run watch' respectively)
+* Package.json is 100% ready
 
 
 
