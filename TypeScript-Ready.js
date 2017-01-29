@@ -19,42 +19,8 @@ function ask(question, callback) {
   });
 }
 
-const askings = 'Please input your github project handle: \n Example: https://github.com/CraigglesO/typescript-ready.git';
-
-ask(askings, function(answer) {
-  console.log(answer);
-  if (!answer) {
-    console.log('sorry, you need to insert a github handle');
-    return;
-  }
-  HANDLE       = answer;
-  let r        = answer.split('.git')[0];
-      r        = r.split('/')
-  PROJECT_NAME = r.slice(-1)[0];
-  USERNAME     = r.slice(-2)[0];
-
-
-
-
-
-  let tsConfig = `./node_modules/typescript/lib/tsc --init`;
-  tsConfig = tsConfig.split(' ');
-  let createFiles = `package.json tsconfig.json .env .gitignore README.md LICENSE CONTRIBUTE.md .travis.yml typings.json .editorconfig`;
-  createFiles = createFiles.split(' ');
-
-  console.log('Creating files...');
-  let createFile = spawnSync( 'touch', createFiles );
-  if (createFile.stderr) {
-    console.log(createFile.stderr.toString());
-  }
-  if (!fs.existsSync("test")){
-      fs.mkdirSync("test");
-  }
-
-
-
-  //File contents:
-  const pkgJSON = `{
+//File contents:
+const pkgJSON = `{
   "name": "${PROJECT_NAME}",
   "version": "0.0.0",
   "description": "DESCRIPTION_GOES_HERE",
@@ -318,6 +284,36 @@ insert_final_newline = true
 insert_final_newline = false
 trim_trailing_whitespace = false`;
 
+ask('Please input your github project handle: \n Example: https://github.com/CraigglesO/typescript-ready.git', function(answer) {
+  console.log(answer);
+  if (!answer) {
+    console.log('sorry, you need to insert a github handle');
+    return;
+  }
+  HANDLE       = answer;
+  let r        = answer.split('.git')[0];
+      r        = r.split('/')
+  PROJECT_NAME = r.slice(-1)[0];
+  USERNAME     = r.slice(-2)[0];
+
+
+
+
+
+  let tsConfig = `./node_modules/typescript/lib/tsc --init`;
+  tsConfig = tsConfig.split(' ');
+  let createFiles = `package.json tsconfig.json .env .gitignore README.md LICENSE CONTRIBUTE.md .travis.yml typings.json .editorconfig`;
+  createFiles = createFiles.split(' ');
+
+  console.log('Creating files...');
+  let createFile = spawnSync( 'touch', createFiles );
+  if (createFile.stderr) {
+    console.log(createFile.stderr.toString());
+  }
+  if (!fs.existsSync("test")){
+      fs.mkdirSync("test");
+  }
+
   console.log('Writing to Files...');
   writeFileSync('package.json', pkgJSON);
   writeFileSync('.env', env);
@@ -326,7 +322,7 @@ trim_trailing_whitespace = false`;
   writeFileSync(`${PROJECT_NAME}.d.ts`, indexD);
   writeFileSync('README.md', README);
   writeFileSync('LICENSE', ISC);
-    writeFileSync('CONTRIBUTE.md', contr);
+  writeFileSync('CONTRIBUTE.md', contr);
   writeFileSync('tsconfig.json', tsconfig);
   writeFileSync('.travis.yml', travis);
   writeFileSync('typings.json', typings);
@@ -336,6 +332,11 @@ trim_trailing_whitespace = false`;
 
 
 
+  finishUp();
+  return true;
+});
+
+function finishUp() {
   console.log('Installing Modules...');
   let install = spawnSync( 'npm', ['install'] );
   if (install.stderr) {
@@ -366,5 +367,4 @@ trim_trailing_whitespace = false`;
 
   `);
 
-  return true;
-});
+}
