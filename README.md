@@ -1,5 +1,7 @@
 # TypeScript-Ready [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![Code Climate](https://codeclimate.com/github/CraigglesO/TypeScript-Ready/badges/gpa.svg)](https://codeclimate.com/github/CraigglesO/TypeScript-Ready) [![downloads][downloads-image]][downloads-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/CraigglesO/TypeScript-Ready.svg)](https://greenkeeper.io/)
+
   [travis-image]: https://travis-ci.org/CraigglesO/TypeScript-Ready.svg?branch=master
   [travis-url]: https://travis-ci.org/CraigglesO/TypeScript-Ready
   [npm-image]: https://img.shields.io/npm/v/typescript-ready.svg
