@@ -19,7 +19,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "jsonfile": "^2.4.0"
+    "jsonfile": "^3.0.0"
   },
   "devDependencies": {
     "tap-spec": "^4.1.1",
